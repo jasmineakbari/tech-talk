@@ -18,9 +18,9 @@ Link to the Deployed application: https://tech-talk-ya.herokuapp.com/.
 ## Usage 
 
 Helpful Screenshots:
-![Home Page](./images/step-1.PNG)
+![HomePage](./assets/images/step-1.PNG)
 
-![Sign Up/Login Page](./images/step-2.PNG)
+![SignUp/LoginPage](./assets/images/step-2.PNG)
 
 ## Licenses
 
