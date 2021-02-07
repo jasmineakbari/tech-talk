@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     console.log(req.session);
@@ -51,28 +52,20 @@ router.get('/login', (req, res) => {
 });
 
 // route to single post
-router.get('/post/:id', (req, res) => {
+router.get('/post/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
         },
-        attributes: [
-            'id',
-            'post_url',
-            'title',
-            'created_at'
-        ],
         include: [
-            // comment on post and user information
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
                 }
             },
-            // original posts user information
             {
                 model: User,
                 attributes: ['username']
@@ -85,10 +78,8 @@ router.get('/post/:id', (req, res) => {
                 return;
             }
 
-            // serialize the data
             const post = dbPostData.get({ plain: true });
 
-            // pass data to the template
             res.render('single-post', { 
                 post,
                 loggedIn: req.session.loggedIn
