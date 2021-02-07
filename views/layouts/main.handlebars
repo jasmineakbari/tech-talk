@@ -12,18 +12,18 @@
 <body>
    <header>
     <h1>
-      <a href="/">Tech Talk</a>
+      <a href="/" class="nav justify-content-center">Tech Talk</a>
     </h1>
     <nav>
       {{#if loggedIn}}
-      <a href="/dashboard">Dashboard</a>
-      <button id="logout" class="btn-no-style">Logout</button>
+      <a href="/dashboard" class="justify-content-end">Dashboard</a>
+      <button id="logout" class="btn-no-style justify-content-end">Logout</button>
       {{else}}
       <a href="/login">Login</a>
       {{/if}}
     </nav>
   </header>
-  <div class="wrapper">
+  <div class="wrapper justify-content-center">
     <main>
       {{{ body }}}
     </main>

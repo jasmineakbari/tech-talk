@@ -5,9 +5,9 @@ class Comment extends Model {}
 
 Comment.init(
     {
-        // columns here
         id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
@@ -15,7 +15,6 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                // can set number of chars in pw
                 len: [1]
             } 
         },
