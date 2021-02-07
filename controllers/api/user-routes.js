@@ -33,12 +33,6 @@ router.get('/:id', (req, res) =>{
                   model: User,
                   attributes: ['username']
                 }
-            },
-            {
-              model: Post,
-              attributes: ['title'],
-              through: Vote,
-              as: 'voted_posts'
             }
         ]
     })
