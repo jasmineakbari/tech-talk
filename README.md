@@ -13,7 +13,7 @@ This is a simple application where the focus is: conversations between developer
 
 ## Application Link
 
-Link to the Deployed application: [Tech-Talk](https://tech-talk-ya.herokuapp.com/)https://tech-talk-ya.herokuapp.com/.
+Link to the Deployed application: [Tech-Talk](https://tech-talk-ya.herokuapp.com/).
 
 ## Usage 
 
